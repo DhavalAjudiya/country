@@ -11,10 +11,8 @@ class GoogleSign extends StatefulWidget {
 class _GoogleSignState extends State<GoogleSign> {
   googlelogin() async {
     GoogleSignIn _googleSignIn = GoogleSignIn();
-
     try {
       final result = await _googleSignIn.signIn();
-
       print("result===>>$result");
     } catch (e) {
       print("error====$e");
@@ -24,20 +22,23 @@ class _GoogleSignState extends State<GoogleSign> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: () async {},
-            child: const Text("GOOGLE Sing"),
-          ),
-          ElevatedButton(
-            onPressed: () async {},
-            child: const Text("GOOGLE SignOut"),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () async {
+                googlelogin();
+              },
+              child: const Text("GOOGLE Sing"),
+            ),
+            ElevatedButton(
+              onPressed: () async {},
+              child: const Text("GOOGLE SignOut"),
+            ),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

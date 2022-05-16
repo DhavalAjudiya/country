@@ -73,12 +73,8 @@ class _ScreenDataState extends State<ScreenData> {
                 ),
                 onChanged: (value) {
                   setState(() {
-                    // fetchData();
                     state.clear();
-
                     _chosenValue = value;
-                    print("=====>>> n ${_chosenValue.toString()}");
-
                     Country selected = data.countries!.firstWhere(
                         (Country element) => _chosenValue == element.country);
                     stateList = selected.states?[0];
