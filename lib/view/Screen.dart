@@ -77,9 +77,9 @@ class _ScreenDataState extends State<ScreenData> {
                     _chosenValue = value;
                     Country selected = data.countries!.firstWhere(
                         (Country element) => _chosenValue == element.country);
+                    print('state 11111===> ${selected}');
                     stateList = selected.states?[0];
                     state.addAll(selected.states ?? []);
-                    // print("${state.length}");
                     print('state  ===> ${selected.states}');
                   });
                 },
