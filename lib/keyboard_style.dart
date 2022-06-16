@@ -1,4 +1,5 @@
 import 'package:built_in_keyboard/language.dart';
+import 'package:cuntry/app_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:built_in_keyboard/built_in_keyboard.dart';
 
@@ -18,10 +19,9 @@ class _keyBoardState extends State<keyBoard> {
     });
   }
 
-  @override
+  TextEditingController textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController textController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Built In Keyboard'),
@@ -35,6 +35,7 @@ class _keyBoardState extends State<keyBoard> {
           Padding(
             padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0.0),
             child: TextFormField(
+              onChanged: (String) {},
               controller: textController,
               readOnly: true,
               keyboardType: TextInputType.name,
